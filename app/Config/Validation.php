@@ -40,4 +40,46 @@ class Validation
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------
+
+	public $register = [
+		'username' => [
+			'rules' => 'required|min_length[5]|is_unique[users.username]',
+		],
+		'password' => [
+			'rules' => 'required',
+		],
+		'firstname' => [
+			'rules' => 'required',
+		],
+		'lastname' => [
+			'rules' => 'required',
+		],
+		'address' => [
+			'rules' => 'required',
+		],
+		'age' => [
+			'rules' => 'required|is_natural',
+		],
+	];
+
+	public $update_user = [
+		'username' => [
+			'rules' => 'required|min_length[5]|is_unique[users.username,id,{id}]',
+		],
+		'password' => [
+			'rules' => 'required',
+		],
+		'firstname' => [
+			'rules' => 'required',
+		],
+		'lastname' => [
+			'rules' => 'required',
+		],
+		'address' => [
+			'rules' => 'required',
+		],
+		'age' => [
+			'rules' => 'required|is_natural',
+		],
+	];
 }

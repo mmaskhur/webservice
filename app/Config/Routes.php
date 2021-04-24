@@ -31,12 +31,8 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Crud::index');
-$routes->get('/create', 'Crud::create');
-$routes->post('/save', 'Crud::save');
-$routes->get('/edit/(:segment)', 'Crud::edit/$1');
-$routes->post('/update/(:segment)', 'Crud::update/$1');
-$routes->get('/delete/(:segment)', 'Crud::delete/$1');
+$routes->get('/', 'Home::index');
+$routes->resource('users');
 
 /*
  * --------------------------------------------------------------------
